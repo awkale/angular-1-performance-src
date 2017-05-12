@@ -8,10 +8,13 @@ var performance = {
       var ctrl = this;
       ctrl.bottleneck = 'cycle';
 
+
       $scope.$watch(
         function() {
+          // a way to watch a property without passing in a string
           return ctrl.bottleneck;
         },
+        // when watcher is changed you get old and new value
         function(newValue, oldValue) {
           console.log('ctrl.bottleneck', newValue);
         }
