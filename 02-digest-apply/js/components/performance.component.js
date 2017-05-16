@@ -4,6 +4,7 @@ var performance = {
     <h1>Count: {{$ctrl.count}}</h1>
     <div>
       Using ng-click:
+      // ng-click will run digest cycle
       <button id="firstBtn" ng-click="$ctrl.increment()">Increment</button>
     </div>
     <div>
@@ -32,10 +33,12 @@ var performance = {
         }
       );
 
+      // digest cycle has not picked up changed, angular doesn't know a change has occurred
       document.getElementById('secondBtn').addEventListener('click', function() {
         ctrl.increment();
       });
 
+      // tells angular something happened with $scope.$apply
       document.getElementById('thirdBtn').addEventListener('click', function() {
         $scope.$apply(function() {
           ctrl.increment();
