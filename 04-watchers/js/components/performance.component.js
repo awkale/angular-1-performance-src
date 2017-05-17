@@ -10,6 +10,7 @@ var performance = {
     ctrl.watcherCount = 0;
     ctrl.collection = [];
 
+    // returns array of all watchers
     ctrl.$onInit = function() {
       ctrl.watcherCount = Utils.getWatchers().length;
     }
@@ -24,6 +25,7 @@ var performance = {
       });
     }
 
+    // watching this.utils.length for changes, and update ctrl.watcherCount with new value
     $scope.$watch(
       function() {
         return Utils.getWatchers().length;
@@ -31,6 +33,7 @@ var performance = {
       function (newValue, oldValue) {
         ctrl.watcherCount = newValue;
         console.log('ctrl.watcherCount', newValue);
+        // watchers unique to each scope, don't inherit scope from parent scope; independent watchers per scope. 
         console.log($scope.$$watchers);
       }
     );

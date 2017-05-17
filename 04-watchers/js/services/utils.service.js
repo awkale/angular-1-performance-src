@@ -1,3 +1,4 @@
+// function helper that iterates over app and fetches all watchers
 function Utils() {
   this.getWatchers = function (root) {
     root = angular.element(root || document.documentElement);
