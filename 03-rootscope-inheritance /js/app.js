@@ -19,6 +19,7 @@ angular
   .run(function($rootScope, $timeout) {
     $rootScope.count = 10;
 
+    // rootScope has the property of `count` and controllers do not
     $rootScope.$watch('count', function (newValue, oldValue) {
       console.log('$rootScope.count', newValue)
     });
