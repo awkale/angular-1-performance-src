@@ -66,14 +66,17 @@ var performance = {
     ////////////////////////////////////////////////////////
     // Helper functions for updating values in collection //
     ////////////////////////////////////////////////////////
+    // returns new date
     ctrl.now = function() {
       return (new Date()).getTime();
     }
 
+    // it's an object property that updates; takes the first item in collection and update value
     ctrl.changeDeepValue = function() {
       ctrl.collection[0].value = ctrl.now();
     }
 
+    // instead of accessing, push new info in to array
     ctrl.changeShallowValue = function() {
       ctrl.collection.push({
         id: ctrl.collection.length + 1,
