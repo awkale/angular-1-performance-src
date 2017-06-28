@@ -1,3 +1,4 @@
+// binds ngModel 'search' and when changes it broadcasts event
 var todoSearch = {
 	bindings: {
     onSearch: '&'

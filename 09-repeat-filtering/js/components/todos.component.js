@@ -20,6 +20,7 @@ var todos = {
       this.todosFilter = '';
       this.todosPayload = TodoService.getTodos();
     	this.todos = this.todosPayload;
+      //calls a digest cycle
       $interval(function() {}, 1000);
     };
     this.addTodo = function ({ label }) {
